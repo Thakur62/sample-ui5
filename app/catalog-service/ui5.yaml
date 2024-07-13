@@ -1,0 +1,32 @@
+specVersion: "3.1"
+metadata:
+  name: catalogservice
+type: application
+server:
+  customMiddleware:
+    - name: ui5-middleware-simpleproxy
+      afterMiddleware: compression
+      configuration:
+        baseUri: "http://localhost:8080"  # Your backend URL
+        mountPath: " "  # Adjust according to your backend endpoint
+
+    - name: fiori-tools-proxy
+      afterMiddleware: compression
+      configuration:
+        ignoreCertError: false
+        ui5:
+          path:
+            - /resources
+            - /test-resources
+          url: https://ui5.sap.com
+    - name: fiori-tools-appreload
+      afterMiddleware: compression
+      configuration:
+        port: 35729
+        path: webapp
+        delay: 300
+    - name: fiori-tools-preview
+      afterMiddleware: fiori-tools-appreload
+      configuration:
+        component: catalogservice
+        ui5Theme: sap_fiori_3

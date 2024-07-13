@@ -1,0 +1,43 @@
+<mvc:View controllerName="catalogservice.controller.Books"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+  <App id="app">
+    <pages>
+      <Page id="booksPage" title="Books">
+              <headerContent>
+          <Button id="refreshButton" text="Refresh" press=".onRefresh" />
+        </headerContent>
+        <content>
+          <Table id="booksTable" items="{mainService>/Books}">
+            <columns>
+               <Column id="columnID">
+                <header>
+                  <Label id="ID" text="ID"/>
+                </header>
+              </Column>
+              <Column id="columnTitle">
+                <header>
+                  <Label id="Title" text="Title"/>
+                </header>
+              </Column>
+              <Column id="columnStock">
+                <header>
+                  <Label id="stock" text="Stock"/>
+                </header>
+              </Column>
+            </columns>
+            <items>
+              <ColumnListItem id="columnListItem" type="Active" press=".onRowSelect">
+                <cells>
+                  <Text id="title-id" text="{mainService>ID}" />
+                  <Text id="title-text" text="{mainService>title}" />
+                  <Text id="stock-text" text="{mainService>stock}" />
+                </cells>
+              </ColumnListItem>
+            </items>
+          </Table>
+        </content>
+      </Page>
+    </pages>
+  </App>
+</mvc:View>

@@ -1,0 +1,22 @@
+
+---
+spring:
+  h2.console.enabled: true
+  config.activate.on-profile: default
+  sql.init.schema-locations: classpath:schema-h2.sql
+#  security.user.name: admin
+#  security.user.password: admin
+cds:
+  data-source.auto-config.enabled: false
+#  security.mock.enabled: false
+
+---
+#spring:
+#  datasource:
+#    url: jdbc:h2:mem:mydb
+#    username: sa
+#    password: password
+#    driverClassName: org.h2.Driver
+#  jpa:
+#    database-platform: org.hibernate.dialect.H2Dialect
+

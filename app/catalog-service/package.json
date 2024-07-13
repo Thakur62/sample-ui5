@@ -22,8 +22,10 @@
   "devDependencies": {
     "@sap-ux/ui5-middleware-fe-mockserver": "2",
     "@sap/ux-ui5-tooling": "1",
+    "@types/openui5": "^1.126.0",
     "@ui5/cli": "^3.0.0",
     "rimraf": "3.0.2",
+    "typescript": "^5.5.3",
     "ui5-middleware-simpleproxy": "^3.2.16"
   },
   "private": true,

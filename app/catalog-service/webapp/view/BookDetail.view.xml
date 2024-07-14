@@ -1,0 +1,49 @@
+<mvc:View
+    controllerName="catalogservice.controller.BookDetail"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m">
+
+    <Page title="Book Details" class="sapUiContentPadding" showHeader="true">
+
+        <content>
+            <!-- <VBox justifyContent="Center" alignItems="Center" height="100%"> -->
+                <Table width="50%" class="centeredTable">
+                    <columns>
+                        <Column>
+                            <Label text="Property"/>
+                        </Column>
+                        <Column>
+                            <Label text="Value"/>
+                        </Column>
+                    </columns>
+                    <items>
+                        <ColumnListItem>
+                            <cells>
+                                <Label text="ID"/>
+                                <Text text="{mainService>ID}"/>
+                            </cells>
+                        </ColumnListItem>
+                        <ColumnListItem>
+                            <cells>
+                                <Label text="Title"/>
+                                <Input value="{mainService>title}" editable="true"/>
+                            </cells>
+                        </ColumnListItem>
+                        <ColumnListItem>
+                            <cells>
+                                <Label text="Stock"/>
+                                <Input value="{mainService>stock}" editable="true"/>
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+                </Table>
+            <!-- </VBox> -->
+        </content>
+        
+
+    </Page>
+
+
+
+</mvc:View>

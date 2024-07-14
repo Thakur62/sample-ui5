@@ -19,16 +19,16 @@ function(UIComponent, models) {
          * @public
          * @override
          */
-        // init: function() {
-        //     // call the base component's init function
-        //     UIComponent.prototype.init.apply(this, arguments);
+        init: function() {
+            // call the base component's init function
+            UIComponent.prototype.init.apply(this, arguments);
 
-        //     // enable routing
-        //     this.getRouter().initialize();
+            // enable routing
+            this.getRouter().initialize();
 
-        //     // create and set the ODataModel for the catalog service
-        //     var oCatalogModel = models.createCatalogModel();
-        //     this.setModel(oCatalogModel, "catalog");
-        // }
+            // create and set the ODataModel for the catalog service
+            // var oCatalogModel = models.createCatalogModel();
+            // this.setModel(oCatalogModel, "catalog");
+        }
     });
 });

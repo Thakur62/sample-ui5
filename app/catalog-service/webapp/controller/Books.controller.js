@@ -21,11 +21,13 @@ sap.ui.define([
         // Example of a method to handle a row selection event
         onRowSelect: function (oEvent) {
             var oSelectedItem = oEvent.getSource();
-            var oContext = oSelectedItem.getBindingContext("catalog");
-            var sPath = oContext.getPath();
-
-            // Do something with the selected row data
-            console.log(sPath);
+            var oContext = oSelectedItem.getBindingContext("mainService");
+            var sBookId = oContext.getProperty("ID");
+            console.log("sBookId ::: " + sBookId);
+            var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+            oRouter.navTo("BookDetail", {
+                ID: sBookId
+            });
         }
     });
 });

@@ -4,6 +4,7 @@
     displayBlock="true"
     xmlns="sap.m">
 
+
     <Page title="Book Details" class="sapUiContentPadding" showHeader="true">
 
         <content>
@@ -38,12 +39,13 @@
                         </ColumnListItem>
                     </items>
                 </Table>
+            <Toolbar design="Transparent">
+                <ToolbarSpacer/>
+                <Button icon="sap-icon://save" press="onSave"/>
+                <Button icon="sap-icon://sys-cancel-2" press="onExit"/>
+                <ToolbarSpacer/>
+            </Toolbar>
             <!-- </VBox> -->
         </content>
-        
-
     </Page>
-
-
-
 </mvc:View>

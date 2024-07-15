@@ -1,14 +1,14 @@
 <mvc:View controllerName="catalogservice.controller.Books"
     xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
     xmlns="sap.m">
-  <App id="app">
+  <App id="catalogservice">
     <pages>
-      <Page id="booksPage" title="Books">
+      <Page title="Book Details" class="sapUiContentPadding" showHeader="true">
               <headerContent>
           <Button id="refreshButton" text="Refresh" press=".onRefresh" />
         </headerContent>
         <content>
-          <Table id="booksTable" items="{mainService>/Books}">
+        <Table width="50%" class="centeredTable" id="booksTable" items="{mainService>/Books}">
             <columns>
                <Column id="columnID">
                 <header>

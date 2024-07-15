@@ -24,7 +24,7 @@ class CatalogServiceITestV4 {
 	@Test
 	void testReadBooks() throws Exception {
 		mockMvc.perform(get("/odata/v4/CatalogService/Books")
-						.header("Authorization", basic("admin", "admin")))
+						.header("Authorization", basic("system", "")))
 				.andExpect(status().isOk())
 				.andExpect(jsonPath("$.value[0].title").value(containsString("Wuthering Heights")))
 				.andExpect(jsonPath("$.value[0].stock").value(100))

@@ -76,6 +76,7 @@
                     "operationMode": "Server",
                     "autoExpandSelect": true,
                     "earlyRequests": true
+
                 }
             }
         },
@@ -93,7 +94,7 @@
                 "async": true,
                 "viewPath": "catalogservice.view",
                 "controlAggregation": "pages",
-                "controlId": "app",
+                "controlId": "catalogservice",
                 "clearControlAggregation": false
             },
             "routes": [
@@ -129,7 +130,7 @@
             "viewName": "catalogservice.view.Books",
             "type": "XML",
             "async": true,
-            "id": "Books"
+            "id": "catalogservice.view.Books"
         }
     }
 }

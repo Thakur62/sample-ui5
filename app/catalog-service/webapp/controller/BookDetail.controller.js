@@ -38,7 +38,6 @@ sap.ui.define([
             }
             this.getOwnerComponent().getRouter().navTo("Books")
         }
-        
 
     });
 });

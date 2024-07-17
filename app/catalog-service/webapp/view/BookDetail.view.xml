@@ -9,7 +9,7 @@
 
         <content>
             <!-- <VBox justifyContent="Center" alignItems="Center" height="100%"> -->
-                <Table width="50%" class="centeredTable">
+                <Table width="50%" class="centeredTable" id= "BookList">
                     <columns>
                         <Column>
                             <Label text="Property"/>
@@ -22,7 +22,7 @@
                         <ColumnListItem>
                             <cells>
                                 <Label text="ID"/>
-                                <Text text="{mainService>ID}"/>
+                                <Input value="{mainService>ID}"  editable="true"/>
                             </cells>
                         </ColumnListItem>
                         <ColumnListItem>
@@ -41,8 +41,8 @@
                 </Table>
             <Toolbar design="Transparent">
                 <ToolbarSpacer/>
-                <Button icon="sap-icon://save" press="onSave"/>
-                <Button icon="sap-icon://sys-cancel-2" press="onExit"/>
+                <Button icon="sap-icon://save" text="SAVE"    press="onSave"/>
+                <Button icon="sap-icon://sys-cancel-2" text="CANCEL" press="onExit"/>
                 <ToolbarSpacer/>
             </Toolbar>
             <!-- </VBox> -->

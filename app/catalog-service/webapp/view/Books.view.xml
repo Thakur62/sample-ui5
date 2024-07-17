@@ -1,4 +1,4 @@
-<mvc:View controllerName="catalogservice.controller.Books"
+<mvc:View xmlns:simple="sap.gantt.simple" controllerName="catalogservice.controller.Books"
     xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
     xmlns="sap.m">
   <App id="catalogservice">
@@ -9,6 +9,14 @@
         </headerContent>
         <content>
         <Table width="50%" class="centeredTable" id="booksTable" items="{mainService>/Books}">
+ <headerToolbar>
+
+         </headerToolbar>
+         <headerToolbar>
+         <Toolbar>
+        <Button text="Add New Book" icon="sap-icon://add" press="onAddRecord"/>
+         </Toolbar>
+         </headerToolbar>
             <columns>
                <Column id="columnID">
                 <header>
@@ -27,7 +35,7 @@
               </Column>
             </columns>
             <items>
-              <ColumnListItem id="columnListItem" type="Active" press=".onRowSelect">
+              <ColumnListItem id="columnListItem" type="Navigation" press=".onRowSelect">
                 <cells>
                   <Text id="title-id" text="{mainService>ID}" />
                   <Text id="title-text" text="{mainService>title}" />

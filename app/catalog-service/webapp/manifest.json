@@ -75,8 +75,9 @@
                 "settings": {
                     "operationMode": "Server",
                     "autoExpandSelect": true,
-                    "earlyRequests": true
-
+                    "earlyRequests": true,
+                    "groupId": "$auto",
+                    "updateGroupId": "changes"
                 }
             }
         },
@@ -107,7 +108,12 @@
                     "pattern": "BookDetail/{ID}",
                     "name": "BookDetail",
                     "target": "BookDetail"
-                  }
+                  },
+                  {
+                    "pattern": "AddBook",
+                    "name": "AddBook",
+                    "target": "BookDetail"
+                }
             ],
             "targets": {
                 "Books": {
@@ -115,14 +121,17 @@
                     "transition": "slide",
                     "clearControlAggregation": false,
                     "viewId": "Books",
-                    "viewName": "Books"
+                    "viewName": "Books",
+                    "viewLevel": 1
+
                 },
                 "BookDetail": {
                     "viewType": "XML",
                     "transition": "slide",
                     "clearControlAggregation": false,
                     "viewId": "BookDetail",
-                    "viewName": "BookDetail"
+                    "viewName": "BookDetail",
+                    "viewLevel": 2
                 }
             }
         },

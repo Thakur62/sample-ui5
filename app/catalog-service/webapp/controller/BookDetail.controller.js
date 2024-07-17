@@ -14,21 +14,33 @@ sap.ui.define([
         _onObjectMatched: function (oEvent) {
             var sBookId = oEvent.getParameter("arguments").ID; // We get the ID directly here!!!!
             console.log("Book id here " +sBookId)
-            this.getView().bindElement({
-                path: "/Books(" + sBookId + ")", // http://localhost:8080/odata/v4/CatalogService/Books(1) works for ODATA CDS APIs
-                model: "mainService"
-            });
+            var oModel = this.getView().getModel("mainService");
+            var oContext;
+            if(sBookId === "new") {
+                oContext = oModel.bindList("/Books").create({
+                    ID: "",
+                    title: "",
+                    stock: 0
+                })   
+                this.getView().setBindingContext(oContext, "mainService");
+            } else {
+                this.getView().bindElement({
+                    path: "/Books(" + sBookId + ")", // http://localhost:8080/odata/v4/CatalogService/Books(1) works for ODATA CDS APIs
+                    model: "mainService"
+                });
+            }
+
         },
         onSave: function () {
             var oModel = this.getView().getModel("mainService");
-            console.log("Book id here " +oModel)
-            // Get the binding context and request a batch change
-            var oContext = this.getView().getBindingContext("mainService");
-            oModel.submitBatch("batchGroup").then(function() {
+            var oRouter = this.getOwnerComponent().getRouter(); 
+            oModel.submitBatch("changes").then(function() {
                 MessageToast.show("Changes saved successfully.");
+                oRouter.navTo("Books")
+                oModel.refresh();
             }).catch(function(oError) {
                 MessageToast.show("Error saving changes: " + oError.message);
-            });
+            });       
         },
 
         onExit: function () {
@@ -38,6 +50,5 @@ sap.ui.define([
             }
             this.getOwnerComponent().getRouter().navTo("Books")
         }
-
     });
 });

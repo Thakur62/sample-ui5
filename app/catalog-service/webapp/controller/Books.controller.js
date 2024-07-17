@@ -28,6 +28,12 @@ sap.ui.define([
             oRouter.navTo("BookDetail", {
                 ID: sBookId
             });
-        }
+        },
+        onAddRecord: function() {
+            var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+            oRouter.navTo("BookDetail", {
+                ID: "new"
+            });
+            }
     });
 });

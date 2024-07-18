@@ -22,7 +22,7 @@
                         <ColumnListItem>
                             <cells>
                                 <Label text="ID"/>
-                                <Input value="{mainService>ID}"  editable="true"/>
+                                <Input value="{mainService>ID}" editable="true"/>
                             </cells>
                         </ColumnListItem>
                         <ColumnListItem>

@@ -3,7 +3,20 @@
 spring:
   h2.console.enabled: true
   config.activate.on-profile: default
-  sql.init.schema-locations: classpath:schema-h2.sql
+  sql:
+    init:
+      schema-locations: classpath:schema-h2.sql
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: my-group
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer 
+
 #  security.user.name: admin
 #  security.user.password: admin
 cds:
@@ -19,4 +32,3 @@ cds:
 #    driverClassName: org.h2.Driver
 #  jpa:
 #    database-platform: org.hibernate.dialect.H2Dialect
-

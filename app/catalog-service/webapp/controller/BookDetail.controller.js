@@ -18,7 +18,6 @@ sap.ui.define([
             var oContext;
             if(sBookId === "new") {
                 oContext = oModel.bindList("/Books").create({
-                    ID: "",
                     title: "",
                     stock: 0
                 })   

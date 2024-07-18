@@ -33,6 +33,11 @@
                   <Label id="stock" text="Stock"/>
                 </header>
               </Column>
+              <Column id="columnDelete">
+                <header>
+                  <Label id="delete" text="Delete"/>
+                </header>
+              </Column>
             </columns>
             <items>
               <ColumnListItem id="columnListItem" type="Navigation" press=".onRowSelect">
@@ -40,6 +45,7 @@
                   <Text id="title-id" text="{mainService>ID}" />
                   <Text id="title-text" text="{mainService>title}" />
                   <Text id="stock-text" text="{mainService>stock}" />
+                  <Button icon="sap-icon://delete" press=".onDeleteRecord"/>
                 </cells>
               </ColumnListItem>
             </items>

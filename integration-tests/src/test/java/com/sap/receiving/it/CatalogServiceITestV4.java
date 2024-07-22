@@ -2,6 +2,7 @@ package com.sap.receiving.it;
 
 import static org.hamcrest.CoreMatchers.containsString;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -31,6 +32,18 @@ class CatalogServiceITestV4 {
 				.andExpect(jsonPath("$.value[1].title").value(containsString("Jane Eyre (discounted)")))
 				.andExpect(jsonPath("$.value[1].stock").value(500));
 	}
+
+	// @Test
+	// void testAddReview() throws Exception {
+	// 	String requestBody = "{\"title\": \"Great Book\"}"; // Adjusted request body
+	// 	mockMvc.perform(post("/odata/v4/CatalogService/addReview") // Adjusted endpoint
+	// 			.header("Authorization", basic("system", ""))
+	// 			.contentType("application/json")
+	// 			.content(requestBody))
+	// 			.andExpect(status().isOk())
+	// 			.andExpect(jsonPath("$.value").value("I am Result Great Book"));
+	// }
+	
 
 	private String basic(String user, String password) {
 		return "Basic " + Base64.getEncoder().encodeToString((user + ":" + password).getBytes());

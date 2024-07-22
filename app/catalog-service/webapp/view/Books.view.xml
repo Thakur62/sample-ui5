@@ -35,7 +35,7 @@
               </Column>
               <Column id="columnDelete">
                 <header>
-                  <Label id="delete" text="Delete"/>
+                  <Label id="delete"/>
                 </header>
               </Column>
             </columns>
@@ -45,7 +45,7 @@
                   <Text id="title-id" text="{mainService>ID}" />
                   <Text id="title-text" text="{mainService>title}" />
                   <Text id="stock-text" text="{mainService>stock}" />
-                  <Button icon="sap-icon://delete" press=".onDeleteRecord"/>
+                  <Button icon="sap-icon://delete" press=".onDeleteRecord" tooltip="Click to delete this record"/>
                 </cells>
               </ColumnListItem>
             </items>

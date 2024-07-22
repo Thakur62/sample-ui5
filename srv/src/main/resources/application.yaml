@@ -23,6 +23,8 @@ cds:
   data-source.auto-config.enabled: false
 #  security.mock.enabled: false
 
+server:
+  port: 8089
 ---
 #spring:
 #  datasource:
